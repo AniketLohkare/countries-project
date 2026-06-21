@@ -6,10 +6,8 @@ import CountriesListShimmer from './CountriesListShimmer'
 export default function CountriesList({ query }) {
   const [countriesData, setCountriesData] = useState([])
 
-  // const [filteredData, setQuery] = useFilter(data, () => '')
-
   useEffect(() => {
-    fetch('http://localhost:3000/countries')
+   fetch('https://countries-project-n5nr.onrender.com/countries')
       .then((res) => res.json())
       .then((data) => {
         setCountriesData(data)

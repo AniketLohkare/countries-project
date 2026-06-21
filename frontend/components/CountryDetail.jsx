@@ -37,7 +37,7 @@ export default function CountryDetail() {
 
     Promise.all(
       data.borders.map((border) => {
-        return fetch(`http://localhost:3000/countries/code/${border}`)
+        return fetch(`https://countries-project-n5nr.onrender.com/countries/code/${border}`)
           .then((res) => res.json())
           .then(([borderCountry]) => borderCountry.name.common)
       })
@@ -54,7 +54,7 @@ export default function CountryDetail() {
       return
     }
 
-    fetch(`http://localhost:3000/countries/name/${countryName}`)
+    fetch(`https://countries-project-n5nr.onrender.com/countries/name/${countryName}`)
       .then((res) => res.json())
       .then(([data]) => {
         updateCountryData(data)
