@@ -8,32 +8,42 @@ The project uses a separate Express backend to serve country data. This backend 
 
 https://countries-api-application.netlify.app/
 
+## Preview
+
+### All Countries
+
+![All Countries](./screenshots/all-countries.png)
+
+### One Country
+
+![One Country](./screenshots/one-country.png)
+
 ## Features
 
-* Browse countries and their information
-* Search for a country by name
-* Filter countries by region
-* View detailed information about a selected country
-* Navigate between country pages using React Router
-* Responsive design for different screen sizes
-* Separate frontend and backend architecture
-* Custom Express API for serving country data
+- Browse countries and their information
+- Search for a country by name
+- Filter countries by region
+- View detailed information about a selected country
+- Navigate between country pages using React Router
+- Responsive design for different screen sizes
+- Separate frontend and backend architecture
+- Custom Express API for serving country data
 
 ## Tech Stack
 
 ### Frontend
 
-* React
-* React Router
-* JavaScript
-* CSS
-* Parcel
+- React
+- React Router
+- JavaScript
+- CSS
+- Parcel
 
 ### Backend
 
-* Node.js
-* Express.js
-* CORS
+- Node.js
+- Express.js
+- CORS
 
 ## Architecture
 
@@ -46,8 +56,7 @@ countries-project/
 │   ├── contexts/
 │   ├── hooks/
 │   ├── App.jsx
-│   ├── index.jsx
-│   └── countriesData.js
+│   └── index.jsx
 │
 └── backend/
     ├── data/
@@ -124,16 +133,16 @@ The backend runs on port `3000` by default.
 
 This project helped me practice:
 
-* Building reusable React components
-* Managing application state with React Context
-* Creating custom React hooks
-* Using React Router for client-side navigation
-* Fetching data from an API
-* Building a REST API with Express.js
-* Connecting a React frontend to a custom backend
-* Structuring a project into separate frontend and backend applications
-* Handling the migration from a deprecated third-party API
-* Creating responsive user interfaces
+- Building reusable React components
+- Managing application state with React Context
+- Creating custom React hooks
+- Using React Router for client-side navigation
+- Fetching data from an API
+- Building a REST API with Express.js
+- Connecting a React frontend to a custom backend
+- Structuring a project into separate frontend and backend applications
+- Handling the migration from a deprecated third-party API
+- Creating responsive user interfaces
 
 ## Disclaimer
 

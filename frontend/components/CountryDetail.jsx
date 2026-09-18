@@ -37,13 +37,15 @@ export default function CountryDetail() {
 
     Promise.all(
       data.borders.map((border) => {
-        return fetch(`https://countries-project-n5nr.onrender.com/countries/code/${border}`)
+        return fetch(
+          `https://countries-project-n5nr.onrender.com/countries/code/${border}`,
+        )
           .then((res) => res.json())
           .then(([borderCountry]) => borderCountry.name.common)
-      })
+      }),
     ).then((borders) => {
       setTimeout(() =>
-        setCountryData((prevState) => ({ ...prevState, borders }))
+        setCountryData((prevState) => ({ ...prevState, borders })),
       )
     })
   }
@@ -54,7 +56,9 @@ export default function CountryDetail() {
       return
     }
 
-    fetch(`https://countries-project-n5nr.onrender.com/countries/name/${countryName}`)
+    fetch(
+      `https://countries-project-n5nr.onrender.com/countries/name/${countryName}`,
+    )
       .then((res) => res.json())
       .then(([data]) => {
         updateCountryData(data)
@@ -71,57 +75,62 @@ export default function CountryDetail() {
 
   return (
     <main className={`${isDark ? 'dark' : ''}`}>
-      <div className="country-details-container">
-        <span className="back-button" onClick={() => history.back()}>
-          <i className="fa-solid fa-arrow-left"></i>&nbsp; Back
+      <div className='country-details-container'>
+        <span className='back-button' onClick={() => history.back()}>
+          <i className='fa-solid fa-arrow-left'></i>&nbsp; Back
         </span>
         {countryData === null ? (
           <CountryDetailShimmer />
         ) : (
-          <div className="country-details">
+          <div className='country-details'>
             <img src={countryData.flag} alt={`${countryData.name} flag`} />
-            <div className="details-text-container">
+            <div className='details-text-container'>
               <h1>{countryData.name}</h1>
-              <div className="details-text">
-                <p>
-                  <b>
-                    Native Name: {countryData.nativeName || countryData.name}
-                  </b>
-                  <span className="native-name"></span>
-                </p>
-                <p>
-                  <b>
-                    Population: {countryData.population.toLocaleString('en-IN')}
-                  </b>
-                  <span className="population"></span>
-                </p>
-                <p>
-                  <b>Region: {countryData.region}</b>
-                  <span className="region"></span>
-                </p>
-                <p>
-                  <b>Sub Region: {countryData.subregion}</b>
-                  <span className="sub-region"></span>
-                </p>
-                <p>
-                  <b>Capital: {countryData.capital?.join(', ')}</b>
-                  <span className="capital"></span>
-                </p>
-                <p>
-                  <b>Top Level Domain: {countryData.tld}</b>
-                  <span className="top-level-domain"></span>
-                </p>
-                <p>
-                  <b>Currencies: {countryData.currencies}</b>
-                  <span className="currencies"></span>
-                </p>
-                <p>
-                  <b>Languages: {countryData.languages}</b>
-                  <span className="languages"></span>
-                </p>
+              <div className='details-text'>
+                <div className='details-left'>
+                  <p>
+                    <b>
+                      Native Name: {countryData.nativeName || countryData.name}
+                    </b>
+                    <span className='native-name'></span>
+                  </p>
+                  <p>
+                    <b>
+                      Population:{' '}
+                      {countryData.population.toLocaleString('en-IN')}
+                    </b>
+                    <span className='population'></span>
+                  </p>
+                  <p>
+                    <b>Region: {countryData.region}</b>
+                    <span className='region'></span>
+                  </p>
+                  <p>
+                    <b>Sub Region: {countryData.subregion}</b>
+                    <span className='sub-region'></span>
+                  </p>
+                  <p>
+                    <b>Capital: {countryData.capital?.join(', ')}</b>
+                    <span className='capital'></span>
+                  </p>
+                </div>
+                <div className='details-right'>
+                  <p>
+                    <b>Top Level Domain: {countryData.tld}</b>
+                    <span className='top-level-domain'></span>
+                  </p>
+                  <p>
+                    <b>Currencies: {countryData.currencies}</b>
+                    <span className='currencies'></span>
+                  </p>
+                  <p>
+                    <b>Languages: {countryData.languages}</b>
+                    <span className='languages'></span>
+                  </p>
+                </div>
               </div>
               {countryData.borders.length !== 0 && (
-                <div className="border-countries">
+                <div className='border-countries'>
                   <b>Border Countries: </b>&nbsp;
                   {countryData.borders.map((border) => (
                     <Link key={border} to={`/${border}`}>
